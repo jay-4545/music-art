@@ -1,0 +1,104 @@
+{
+  "services": [
+    {
+      "id": 1,
+      "title": "Fundamentals of Music Theory",
+      "slug": "fundamentals-of-music-theory",
+      "description": "Learn the essential concepts of music theory, including scales, chords, and harmony. Perfect for beginners looking to understand how music works.",
+      "price": 499,
+      "instructor": "John Harmon",
+      "isFeatured": true,
+      "image": "https://images.unsplash.com/photo-1511379938547-c1f69419868d"
+    },
+    {
+      "id": 2,
+      "title": "Mastering the Guitar",
+      "slug": "mastering-the-guitar",
+      "description": "A complete course on playing the guitar, covering chords, strumming patterns, fingerpicking, and solo techniques.",
+      "price": 599,
+      "instructor": "Emily Strings",
+      "isFeatured": false,
+      "image": "https://images.unsplash.com/photo-1500336624523-d727130c3328"
+    },
+    {
+      "id": 3,
+      "title": "Digital Music Production",
+      "slug": "digital-music-production",
+      "description": "Learn how to produce professional-quality music using DAWs like FL Studio, Ableton, and Logic Pro. Covers mixing, mastering, and beat-making.",
+      "price": 799,
+      "instructor": "David Beats",
+      "isFeatured": true,
+      "image": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745"
+    },
+    {
+      "id": 4,
+      "title": "The Art of Singing",
+      "slug": "the-art-of-singing",
+      "description": "A vocal training course designed to improve your singing technique, vocal range, and breathing control.",
+      "price": 699,
+      "instructor": "Sophia Melody",
+      "isFeatured": false,
+      "image": "https://images.unsplash.com/photo-1511379938547-c1f69419868d"
+    },
+    {
+      "id": 5,
+      "title": "Advanced Piano Mastery",
+      "slug": "advanced-piano-mastery",
+      "description": "Take your piano skills to the next level with advanced techniques, improvisation, and classical pieces.",
+      "price": 799,
+      "instructor": "Leonard Keys",
+      "isFeatured": true,
+      "image": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4"
+    },
+    {
+      "id": 6,
+      "title": "Violin for Beginners",
+      "slug": "violin-for-beginners",
+      "description": "Start your journey with the violin, learning bowing techniques, scales, and simple songs.",
+      "price": 599,
+      "instructor": "Michael Strings",
+      "isFeatured": false,
+      "image": "https://images.unsplash.com/photo-1421217336522-861978fdf33a"
+    },
+    {
+      "id": 7,
+      "title": "Music Composition & Songwriting",
+      "slug": "music-composition-songwriting",
+      "description": "Learn how to compose your own music and write compelling lyrics, using techniques from famous songwriters and composers.",
+      "price": 749,
+      "instructor": "Rachel Notes",
+      "isFeatured": true,
+      "image": "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc"
+    },
+    {
+      "id": 8,
+      "title": "Electronic Dance Music (EDM) Production",
+      "slug": "electronic-dance-music-production",
+      "description": "Produce high-energy EDM tracks using synthesizers, drum machines, and professional mixing techniques.",
+      "price": 899,
+      "instructor": "DJ Synth",
+      "isFeatured": false,
+      "image": "https://images.unsplash.com/photo-1544785349-c4a5301826fd"
+    },
+    {
+      "id": 9,
+      "title": "History of Classical Music",
+      "slug": "history-of-classical-music",
+      "description": "Explore the evolution of classical music from the Baroque period to the modern era, featuring the works of great composers.",
+      "price": 499,
+      "instructor": "Elizabeth Symphony",
+      "isFeatured": true,
+      "image": "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": 10,
+      "title": "Jazz Improvisation Techniques",
+      "slug": "jazz-improvisation-techniques",
+      "description": "Master jazz improvisation, chord progressions, and solo techniques for instruments like saxophone, trumpet, and piano.",
+      "price": 699,
+      "instructor": "Arthur Jazz",
+      "isFeatured": false,
+      "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2"
+    }
+  ]
+}
