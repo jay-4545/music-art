@@ -4,10 +4,29 @@ import Image from "next/image";
 import Link from "next/link";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { Spotlight } from "@/components/ui/Spotlight";
-import { Button } from "@/components/ui/moving-border";
-import courseData from "@/data/music_courses.json";
 
-export default function ServicesPage() {
+type Course = {
+  id: number;
+  title: string;
+  slug: string;
+  description: string;
+  price: number;
+  instructor: string;
+  isFeatured: boolean;
+  image: string;
+};
+
+type ServicePageLayoutProps = {
+  title: string;
+  subtitle: string;
+  courses: Course[];
+};
+
+export default function ServicePageLayout({
+  title,
+  subtitle,
+  courses,
+}: ServicePageLayoutProps) {
   return (
     <div className="min-h-screen bg-black/[0.96] antialiased bg-grid-white/[0.02] relative">
       <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="white" />
@@ -15,38 +34,19 @@ export default function ServicesPage() {
       {/* Page header */}
       <div className="relative z-10 pt-32 pb-12 text-center px-4">
         <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
-          All Courses
+          {title}
         </h1>
         <p className="mt-4 text-neutral-400 text-base md:text-lg max-w-2xl mx-auto">
-          Explore our full library of music courses — from theory fundamentals
-          to advanced production. Find the perfect course for your journey.
+          {subtitle}
         </p>
         <p className="mt-2 text-neutral-500 text-sm">
-          {courseData.services.length} courses available
+          {courses.length} course{courses.length !== 1 ? "s" : ""} available
         </p>
-      </div>
-
-      {/* Category quick links */}
-      <div className="relative z-10 flex flex-wrap justify-center gap-3 px-4 mb-10">
-        {[
-          { label: "Basic Music Theory", href: "/services/basic-music-theory" },
-          { label: "Advanced Composition", href: "/services/advanced-composition" },
-          { label: "Song Writing", href: "/services/song-writing" },
-          { label: "Music Production", href: "/services/music-production" },
-        ].map((cat) => (
-          <Link
-            key={cat.href}
-            href={cat.href}
-            className="px-4 py-2 rounded-full border border-white/10 text-sm text-neutral-300 hover:border-white/30 hover:text-white transition bg-white/5"
-          >
-            {cat.label}
-          </Link>
-        ))}
       </div>
 
       {/* Course grid */}
       <div className="relative z-10 flex flex-wrap justify-center gap-4 px-4 pb-20">
-        {courseData.services.map((service) => (
+        {courses.map((service) => (
           <CardContainer key={service.id} className="inter-var">
             <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-[90vw] sm:w-[22rem] min-h-[460px] rounded-xl p-6 border flex flex-col justify-between">
               <div>
@@ -89,28 +89,37 @@ export default function ServicesPage() {
                     ₹{service.price}
                   </CardItem>
                 </div>
-                <div className="flex justify-between items-center mt-4 gap-3">
-                  <CardItem translateZ={20} className="flex-1">
-                    <button className="w-full px-4 py-2 rounded-xl text-xs font-medium text-neutral-300 border border-neutral-700 hover:border-teal-500 hover:text-teal-400 transition-colors duration-200">
-                      Preview →
-                    </button>
+                <div className="flex justify-between items-center mt-4">
+                  <CardItem
+                    translateZ={20}
+                    as="button"
+                    className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white hover:opacity-80 transition"
+                  >
+                    Preview →
                   </CardItem>
-                  <CardItem translateZ={20} className="flex-1">
-                    <Link href="/contact" className="block w-full">
-                      <Button
-                        borderRadius="0.75rem"
-                        containerClassName="w-full h-9"
-                        className="bg-white dark:bg-black text-black dark:text-white border-neutral-200 dark:border-slate-800 text-xs font-bold"
-                      >
-                        Enroll Now
-                      </Button>
-                    </Link>
+                  <CardItem
+                    translateZ={20}
+                    as={Link}
+                    href="/contact"
+                    className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold hover:opacity-90 transition"
+                  >
+                    Enroll Now
                   </CardItem>
                 </div>
               </div>
             </CardBody>
           </CardContainer>
         ))}
+      </div>
+
+      {/* Back link */}
+      <div className="relative z-10 text-center pb-12">
+        <Link
+          href="/services"
+          className="text-neutral-400 hover:text-white text-sm transition underline underline-offset-4"
+        >
+          ← Browse all services
+        </Link>
       </div>
     </div>
   );
